@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 114000374807582144}
   m_Layer: 0
   m_Name: hook
-  m_TagString: Untagged
+  m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2294,6 +2294,9 @@ MonoBehaviour:
   playerSpeed: 5
   maxHookDistance: 10
   maxReturnDistance: 0.5
+  shootClip: {fileID: 0}
+  pullClip: {fileID: 0}
+  hitClip: {fileID: 0}
 --- !u!114 &114019490943708312
 MonoBehaviour:
   m_ObjectHideFlags: 1

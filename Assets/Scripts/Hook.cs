@@ -15,10 +15,17 @@ public class Hook : MonoBehaviour {
     [SerializeField] private float maxHookDistance;
     [SerializeField] private float maxReturnDistance;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip shootClip;
+    [SerializeField] private AudioClip pullClip;
+    [SerializeField] private AudioClip hitClip;
+
     private LineRenderer ropeLine;
     private Rigidbody hookRb;
     private Transform hookParent;
     private Transform retractedObject;
+    private AudioSource audio;
+    
 
     private float currentHookDistance;
 
@@ -43,6 +50,7 @@ public class Hook : MonoBehaviour {
     {
         ropeLine = GetComponent<LineRenderer>();
         hookRb = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
 
         hookParent = transform.parent;
 
@@ -59,6 +67,9 @@ public class Hook : MonoBehaviour {
     {
         if (fired == true && hooked == false)
         {
+            audio.clip = shootClip;
+            audio.Play(0);
+
             transform.parent = null;
             hookRb.isKinematic = false;
 
@@ -70,6 +81,8 @@ public class Hook : MonoBehaviour {
 
             if (currentHookDistance >= maxHookDistance)
             {
+                audio.Stop();
+
                 returning = true;
             }
         }
