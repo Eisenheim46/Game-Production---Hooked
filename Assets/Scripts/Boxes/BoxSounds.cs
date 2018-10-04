@@ -14,9 +14,8 @@ public class BoxSounds : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Hook")
-        {
-            audio.Play(0);
-        }
+        audio.Stop();
+
+        audio.Play(0);
     }
 }
