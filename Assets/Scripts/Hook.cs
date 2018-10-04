@@ -67,9 +67,6 @@ public class Hook : MonoBehaviour {
     {
         if (fired == true && hooked == false)
         {
-            audio.clip = shootClip;
-            audio.Play(0);
-
             transform.parent = null;
             hookRb.isKinematic = false;
 
@@ -81,8 +78,6 @@ public class Hook : MonoBehaviour {
 
             if (currentHookDistance >= maxHookDistance)
             {
-                audio.Stop();
-
                 returning = true;
             }
         }
@@ -125,7 +120,8 @@ public class Hook : MonoBehaviour {
 
     private void ShootHook (object sender, ClickedEventArgs e)
     {
-        fired = true;        
+        fired = true;
+
     }
 
     private void ReturnHook()
@@ -162,7 +158,6 @@ public class Hook : MonoBehaviour {
             returning = false;
             fired = false;
             hooked = false;
-
         }
     }
 

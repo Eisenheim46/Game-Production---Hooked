@@ -56,7 +56,7 @@ public class GrabObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Pickable")
+        if (other.gameObject.tag == "Wooden" || other.gameObject.tag == "Metal")
         {
             canGrab = true;
             pickedObject = other.gameObject;
@@ -65,7 +65,7 @@ public class GrabObject : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Pickable")
+        if (other.gameObject.tag == "Wooden" || other.gameObject.tag == "Metal")
         {
             canGrab = false;
         }
