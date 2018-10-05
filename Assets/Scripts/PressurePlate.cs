@@ -35,6 +35,8 @@ public class PressurePlate : MonoBehaviour {
         {
             if (collision.rigidbody.mass == requiredMass)
             {
+                animator.SetBool("isPressed", true);
+
                 renderer.material = activatedMaterial;
 
                 targetDoor.GetComponent<Door>().IsEnabled = true;
@@ -47,12 +49,25 @@ public class PressurePlate : MonoBehaviour {
 
         if (staysActivated == false)
         {
+            animator.SetBool("isPressed", false);
+
             renderer.material = deactivatedMaterial;
 
             targetDoor.GetComponent<Door>().IsEnabled = false;
 
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "MainCamera")
+        {
+            animator.SetBool("isPressed", true);
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        animator.SetBool("isPressed", false);
     }
 }
