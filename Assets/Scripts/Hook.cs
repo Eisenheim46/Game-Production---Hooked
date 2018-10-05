@@ -22,7 +22,7 @@ public class Hook : MonoBehaviour {
 
     private LineRenderer ropeLine;
     private Rigidbody hookRb;
-    private Rigidbody playerRB;
+    private Rigidbody playerRb;
     private Transform hookParent;
     private Transform retractedObject;
     private AudioSource audio;
@@ -51,7 +51,7 @@ public class Hook : MonoBehaviour {
     {
         ropeLine = GetComponent<LineRenderer>();
         hookRb = GetComponent<Rigidbody>();
-        //playerRb = player.gameObject.GetComponent<Rigidbody>();
+        playerRb = player.GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
 
         hookParent = transform.parent;
@@ -88,6 +88,7 @@ public class Hook : MonoBehaviour {
         {
             if (hooked)
             {
+                playerRb.isKinematic = false;
                 ReelTowardsHook();
             }
         }
@@ -100,10 +101,12 @@ public class Hook : MonoBehaviour {
 
         if (falling)
         {
-            player.position = Vector3.MoveTowards(player.position, new Vector3(player.position.x, 0, player.position.z), Time.deltaTime * (playerSpeed/2));
+            playerRb.isKinematic = false;
+            //player.position = Vector3.MoveTowards(player.position, new Vector3(player.position.x, 0, player.position.z), Time.deltaTime * (playerSpeed/2));
 
             if (player.position.y == 0)
             {
+                playerRb.isKinematic = true;
                 falling = false;
             }
         }

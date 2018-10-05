@@ -8,6 +8,7 @@ TagManager:
   - Hookable
   - Wooden
   - Metal
+  - Pickable
   layers:
   - Default
   - TransparentFX

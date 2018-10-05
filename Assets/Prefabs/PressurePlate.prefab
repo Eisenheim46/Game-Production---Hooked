@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4118257397957930}
   - component: {fileID: 33819732990198272}
   - component: {fileID: 23824836199882866}
+  - component: {fileID: 64075272681650864}
   m_Layer: 0
   m_Name: Metal
   m_TagString: Untagged
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 23628331564322684}
   - component: {fileID: 95895697620563606}
   - component: {fileID: 114314068133651362}
+  - component: {fileID: 65955917995143180}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -82,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560418058435672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.196226, y: 0.87342584, z: 5.3253174}
+  m_LocalPosition: {x: 0.96049285, y: 0, z: -0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118257397957930}
@@ -187,6 +189,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345825036601086}
   m_Mesh: {fileID: 4300002, guid: ce20af53bbc8ecc44b16bdde19246e57, type: 3}
+--- !u!64 &64075272681650864
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327755266207668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ce20af53bbc8ecc44b16bdde19246e57, type: 3}
+--- !u!65 &65955917995143180
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345825036601086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.677386, y: 0.09237397, z: 0.677386}
+  m_Center: {x: 0, y: 1.6712306, z: 0}
 --- !u!95 &95895697620563606
 Animator:
   serializedVersion: 3
@@ -218,6 +246,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredMass: 1
   staysActivated: 0
-  deactivatedMaterial: {fileID: 0}
-  activatedMaterial: {fileID: 0}
   targetDoor: {fileID: 0}
