@@ -7,9 +7,6 @@ public class PressurePlate : MonoBehaviour {
     [SerializeField] private int requiredMass;
     [SerializeField] private bool staysActivated;
 
-    [SerializeField] private Material deactivatedMaterial;
-    [SerializeField] private Material activatedMaterial;
-
     [SerializeField] private GameObject targetDoor;
 
     private Renderer renderer;
@@ -26,7 +23,7 @@ public class PressurePlate : MonoBehaviour {
     // Use this for initialization
     private void Start ()
     {
-        renderer.material = deactivatedMaterial;
+        
 	}
 	
     private void OnCollisionEnter(Collision collision)
@@ -35,7 +32,7 @@ public class PressurePlate : MonoBehaviour {
         {
             if (collision.rigidbody.mass == requiredMass)
             {
-                renderer.material = activatedMaterial;
+                animator.SetBool("isPressed", true);
 
                 targetDoor.GetComponent<Door>().IsEnabled = true;
             }   
@@ -47,12 +44,23 @@ public class PressurePlate : MonoBehaviour {
 
         if (staysActivated == false)
         {
-            renderer.material = deactivatedMaterial;
+            animator.SetBool("isPressed", false);
 
             targetDoor.GetComponent<Door>().IsEnabled = false;
 
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "MainCamera")
+        {
+            animator.SetBool("isPressed", true);
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        animator.SetBool("isPressed", false);
     }
 }
