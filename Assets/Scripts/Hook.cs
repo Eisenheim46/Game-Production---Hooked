@@ -22,6 +22,7 @@ public class Hook : MonoBehaviour {
 
     private LineRenderer ropeLine;
     private Rigidbody hookRb;
+    private Rigidbody playerRB;
     private Transform hookParent;
     private Transform retractedObject;
     private AudioSource audio;
@@ -37,13 +38,11 @@ public class Hook : MonoBehaviour {
     private void OnEnable()
     {
         controller.TriggerClicked += ShootHook;
-        controller.Gripped += ReelTowardsHook;
     }
 
     private void OnDisable()
     {
         controller.TriggerClicked -= ShootHook;
-        controller.Gripped -= ReelTowardsHook;
     }
 
 
@@ -52,6 +51,7 @@ public class Hook : MonoBehaviour {
     {
         ropeLine = GetComponent<LineRenderer>();
         hookRb = GetComponent<Rigidbody>();
+        //playerRb = player.gameObject.GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
 
         hookParent = transform.parent;
@@ -67,12 +67,31 @@ public class Hook : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
-
-        if (currentHookDistance >= maxHookDistance)
+        if (fired == true && hooked == false)
         {
-            returning = true;
+            transform.parent = null;
+            hookRb.isKinematic = false;
+
+            ropeLine.enabled = true;
+
+            hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
+
+            currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
+
+            if (currentHookDistance >= maxHookDistance)
+            {
+                returning = true;
+            }
         }
+
+        if (controller.gripped)
+        {
+            if (hooked)
+            {
+                ReelTowardsHook();
+            }
+        }
+
 
         if (returning)
         {
@@ -94,32 +113,27 @@ public class Hook : MonoBehaviour {
     }
 
     private void ShootHook (object sender, ClickedEventArgs e)
-    {
-        fired = true;
+    { 
 
-        if (fired == true && hooked == false)
+        if(returning == false)
         {
-            transform.parent = null;
-            hookRb.isKinematic = false;
-
-            ropeLine.enabled = true;
-
-            hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
+            fired = !fired;
+            Debug.Log(fired);
         }
 
+
+        if (fired == false)
+            returning = true;
     }
 
-    private void ReelTowardsHook (object sender, ClickedEventArgs e)
+    private void ReelTowardsHook ()
     {
-        if (hooked)
-        {
-            transform.parent = null;
-            hookRb.isKinematic = false;
+        transform.parent = null;
+        hookRb.isKinematic = false;
 
-            ropeLine.enabled = true;
+        ropeLine.enabled = true;
 
-            player.position = Vector3.MoveTowards(player.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
-        }
+        player.position = Vector3.MoveTowards(player.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
     }
 
     private void ReturnHook()
@@ -172,7 +186,6 @@ public class Hook : MonoBehaviour {
         if(collision.gameObject.tag == "Hookable")
         {
             hookRb.velocity = new Vector3 (0,0,0);
-            fired = false;
             hooked = true;
         }
 
