@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c4f55adcce0474b498e37c0ffed425c5
+guid: 51842c9dd7eebc94f875c1db723dbd21
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface5_pCube151
-    400000: //RootNode
-    400002: polySurface5_pCube151
-    2100000: polySurface5_pCube151Mat
-    2300000: polySurface5_pCube151
-    3300000: polySurface5_pCube151
-    4300000: polySurface5_pCube151
+    100000: pasted__polySurface5_pasted__pCube151_group
+    100002: //RootNode
+    400000: pasted__polySurface5_pasted__pCube151_group
+    400002: //RootNode
+    2100000: pasted__polySurface5_pasted__pCube151_groupMat
+    2300000: pasted__polySurface5_pasted__pCube151_group
+    3300000: pasted__polySurface5_pasted__pCube151_group
+    4300000: pasted__polySurface5_pasted__pCube151_group
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.1
+    globalScale: 1.3
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
