@@ -55,12 +55,16 @@ public class PressurePlate : MonoBehaviour {
     {
         if (other.gameObject.tag == "MainCamera")
         {
-            animator.SetBool("isPressed", true);
+            animator.SetBool("IsPressed", true);
+
+            targetDoor.GetComponent<Door>().IsEnabled = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        animator.SetBool("isPressed", false);
+        animator.SetBool("IsPressed", false);
+
+        targetDoor.GetComponent<Door>().IsEnabled = false;
     }
 }
