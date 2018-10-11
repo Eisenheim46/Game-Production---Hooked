@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Valve.VR;
 using UnityEngine;
 
 public class Hook : MonoBehaviour {
@@ -8,6 +9,9 @@ public class Hook : MonoBehaviour {
     [SerializeField] private Transform lineOrigin;
     [SerializeField] private Transform player;
     [SerializeField] private SteamVR_TrackedController controller;
+
+    [SerializeField]private SteamVR_TrackedObject trackedObj;
+    private SteamVR_Controller.Device controllerButtons { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
 
     [Header("Manual Input")]
     [SerializeField] private float hookSpeed;
@@ -33,7 +37,7 @@ public class Hook : MonoBehaviour {
     private bool fired;
     private bool hooked;
     private bool returning;
-    //private bool falling;
+    private bool falling;
 
     private void OnEnable()
     {
@@ -61,7 +65,7 @@ public class Hook : MonoBehaviour {
         fired = false;
         hooked = false;
         returning = false;
-       // falling = false;
+        falling = false;
 	}
 	
 	// Update is called once per frame
@@ -84,35 +88,24 @@ public class Hook : MonoBehaviour {
             }
         }
 
-        if (controller.gripped)
+        if (hooked)
         {
-            if (hooked)
+            if (controller.gripped)
             {
                 ReelTowardsHook();
             }
-        }
-        //else
-        //{
-        //    playerRb.isKinematic = false;
-        //}
+            else if (controllerButtons.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+            {
+                playerRb.isKinematic = false;
+            }
 
+        }
 
         if (returning)
         {
             ReturnHook();
         }
 
-        //if (falling)
-        //{
-        //    playerRb.isKinematic = false;
-        //    player.position = Vector3.MoveTowards(player.position, new Vector3(player.position.x, 0, player.position.z), Time.deltaTime * (playerSpeed / 2));
-
-        //    if (player.position.y == 0)
-        //    {
-        //        playerRb.isKinematic = true;
-        //        falling = false;
-        //    }
-        //}
 
         RenderLine();
         
@@ -124,12 +117,14 @@ public class Hook : MonoBehaviour {
         if(returning == false)
         {
             fired = !fired;
-            Debug.Log(fired);
         }
 
 
         if (fired == false)
+        {
             returning = true;
+        }
+            
     }
 
     private void ReelTowardsHook ()
@@ -147,8 +142,7 @@ public class Hook : MonoBehaviour {
     {
         hookRb.velocity = new Vector3(0, 0, 0);
 
-        hookRb.isKinematic = false;
-        playerRb.isKinematic = false;
+        hookRb.isKinematic = true;
 
         this.transform.position = Vector3.MoveTowards(transform.position, hookOrigin.position, Time.deltaTime * hookSpeed);
 
@@ -161,11 +155,6 @@ public class Hook : MonoBehaviour {
                 retractedObject.parent = null;
                 retractedObject.GetComponent<Rigidbody>().isKinematic = false;
             }
-            
-            //if (hooked)
-            //{
-            //    falling = true;
-            //}
 
             ropeLine.enabled = false;
 

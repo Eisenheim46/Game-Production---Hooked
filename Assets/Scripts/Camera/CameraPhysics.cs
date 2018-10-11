@@ -6,6 +6,8 @@ public class CameraPhysics : MonoBehaviour {
 
     private Rigidbody cameraRb;
 
+    private bool onFloor;
+
     private void Start()
     {
         cameraRb = GetComponent<Rigidbody>();
@@ -13,14 +15,17 @@ public class CameraPhysics : MonoBehaviour {
 
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Floor")
-        {
-
+        { 
             cameraRb.isKinematic = true;
-            //falling = false;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        cameraRb.isKinematic = false;
     }
 
 }
