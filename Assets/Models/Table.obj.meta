@@ -10,6 +10,8 @@ ModelImporter:
     400002: Cube_1
     400004: //RootNode
     2100000: Default_Prototype
+    2100002: Cube_0Mat
+    2100004: Cube_1Mat
     2300000: Cube_0
     2300002: Cube_1
     3300000: Cube_0
