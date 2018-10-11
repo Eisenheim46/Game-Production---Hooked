@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class CameraPhysics : MonoBehaviour {
 
+    private Rigidbody cameraRb;
 
-    private void OnTriggerStay(Collider other)
+    private void Start()
+    {
+        cameraRb = GetComponent<Rigidbody>();
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Floor")
         {
 
-            GetComponent<Rigidbody>().isKinematic = true;
+            cameraRb.isKinematic = true;
             //falling = false;
         }
     }
