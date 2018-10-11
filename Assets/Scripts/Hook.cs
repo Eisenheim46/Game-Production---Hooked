@@ -91,12 +91,16 @@ public class Hook : MonoBehaviour {
                 ReelTowardsHook();
             }
         }
-
-
-        //if (returning)
+        //else
         //{
-        //    ReturnHook();
+        //    playerRb.isKinematic = false;
         //}
+
+
+        if (returning)
+        {
+            ReturnHook();
+        }
 
         //if (falling)
         //{
@@ -132,6 +136,7 @@ public class Hook : MonoBehaviour {
     {
         transform.parent = null;
         hookRb.isKinematic = true;
+        playerRb.isKinematic = true;
 
         ropeLine.enabled = true;
 
@@ -143,6 +148,7 @@ public class Hook : MonoBehaviour {
         hookRb.velocity = new Vector3(0, 0, 0);
 
         hookRb.isKinematic = false;
+        playerRb.isKinematic = false;
 
         this.transform.position = Vector3.MoveTowards(transform.position, hookOrigin.position, Time.deltaTime * hookSpeed);
 

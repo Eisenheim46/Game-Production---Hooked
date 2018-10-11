@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraPhysics : MonoBehaviour {
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Floor")
         {
