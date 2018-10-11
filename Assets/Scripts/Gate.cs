@@ -2,28 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
-
-    [SerializeField] private bool isOpen;
-
-    public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
-    public bool IsEnabled { get; set; }
+[RequireComponent(typeof(IsEnabled))]
+public class Gate : MonoBehaviour
+{
 
     private Animator animator;
 
-    // Use this for initialization
     void Start ()
     {
-        IsEnabled = false;
+        GetComponent<IsEnabled>().isEnabled = false;
 
         animator = GetComponent<Animator>();
+        animator.SetBool("IsOpen", false);
 
-        animator.SetBool("IsOpen", isOpen);
     }
 
     private void Update()
     {
-        if (IsEnabled)
+        if (GetComponent<IsEnabled>().isEnabled)
         {
             animator.SetBool("IsOpen", true);
         }
