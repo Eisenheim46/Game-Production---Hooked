@@ -26,7 +26,27 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys: []
   m_Bool_values: 0101
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_Int_values: 00000000000000000200000000000000
+=======
   m_Int_values: 00000000000000000000000000000000
+>>>>>>> parent of a06defe... Replaced planes wtih prefabs
+=======
+  m_Int_values: 00000000000000000000000000000000
+>>>>>>> parent of a06defe... Replaced planes wtih prefabs
+=======
+  m_Int_values: 00000000000000000000000000000000
+>>>>>>> parent of a06defe... Replaced planes wtih prefabs
+=======
+  m_Int_values: 00000000000000000000000000000000
+>>>>>>> parent of a06defe... Replaced planes wtih prefabs
+=======
+  m_Int_values: 00000000000000000000000000000000
+>>>>>>> parent of a06defe... Replaced planes wtih prefabs
   m_Float_values:
   - 0
   - 0
