@@ -30,6 +30,7 @@ public class Hook : MonoBehaviour {
     private Transform hookParent;
     private Transform retractedObject;
     private AudioSource audio;
+    private PlayerPhysics playerPhysics;
     
 
     private float currentHookDistance;
@@ -37,7 +38,6 @@ public class Hook : MonoBehaviour {
     private bool fired;
     private bool hooked;
     private bool returning;
-    private bool falling;
 
     private void OnEnable()
     {
@@ -55,6 +55,7 @@ public class Hook : MonoBehaviour {
     {
         ropeLine = GetComponent<LineRenderer>();
         hookRb = GetComponent<Rigidbody>();
+        playerPhysics = player.GetComponent<PlayerPhysics>();
         playerRb = player.GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
 
@@ -65,7 +66,6 @@ public class Hook : MonoBehaviour {
         fired = false;
         hooked = false;
         returning = false;
-        falling = false;
 	}
 	
 	// Update is called once per frame
@@ -130,12 +130,19 @@ public class Hook : MonoBehaviour {
     private void ReelTowardsHook ()
     {
         transform.parent = null;
+
         hookRb.isKinematic = true;
-        playerRb.isKinematic = true;
+
+        if (playerRb.isKinematic == false)
+        {
+            playerRb.isKinematic = true;
+        }
 
         ropeLine.enabled = true;
 
         player.position = Vector3.MoveTowards(player.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+        Vector3 currentMomentum = playerRb.velocity;
+        Debug.Log(currentMomentum);
     }
 
     private void ReturnHook()
@@ -143,6 +150,11 @@ public class Hook : MonoBehaviour {
         hookRb.velocity = new Vector3(0, 0, 0);
 
         hookRb.isKinematic = true;
+
+        if (!playerPhysics.OnFloor && playerRb.isKinematic == true)
+        {
+            playerRb.isKinematic = false;
+        }
 
         this.transform.position = Vector3.MoveTowards(transform.position, hookOrigin.position, Time.deltaTime * hookSpeed);
 

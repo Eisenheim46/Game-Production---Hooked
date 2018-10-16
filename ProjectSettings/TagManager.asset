@@ -9,6 +9,7 @@ TagManager:
   - Wooden
   - Metal
   - Floor
+  - Key
   layers:
   - Default
   - TransparentFX

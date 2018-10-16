@@ -6,14 +6,10 @@ public class HookOrigin : MonoBehaviour
 {
     [SerializeField] private GameObject target;
 
-
-    [HideInInspector] public bool IsWooden;
+    private bool isWooden;
     private RaycastHit hit;
 
-	void Start ()
-    {
-		
-	}
+    public bool IsWooden { get { return isWooden; } }
 
 	void Update ()
     {
@@ -29,11 +25,11 @@ public class HookOrigin : MonoBehaviour
 
         if (hit.transform != null && (hit.transform.gameObject.tag == "Hookable" || hit.transform.gameObject.tag == "Wooden"))
         {
-            IsWooden = true;
+            isWooden = true;
         }
         else if (hit.transform != null)
         {
-            IsWooden = false;
+            isWooden = false;
         }
     }
 }
