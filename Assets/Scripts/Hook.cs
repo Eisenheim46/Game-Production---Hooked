@@ -80,12 +80,13 @@ public class Hook : MonoBehaviour {
 
             hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
 
-            currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
 
-            if (currentHookDistance >= maxHookDistance)
-            {
-                returning = true;
-            }
+            //currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
+
+            //if (currentHookDistance >= maxHookDistance)
+            //{
+            //    returning = true;
+            //}
         }
 
         if (hooked)
@@ -101,11 +102,17 @@ public class Hook : MonoBehaviour {
 
         }
 
-        if (returning)
+        //if (returning)
+        //{
+        //    ReturnHook();
+        //}
+
+        currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
+
+        if (currentHookDistance >= maxHookDistance)
         {
             ReturnHook();
         }
-
 
         RenderLine();
         
@@ -141,8 +148,6 @@ public class Hook : MonoBehaviour {
         ropeLine.enabled = true;
 
         player.position = Vector3.MoveTowards(player.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
-        Vector3 currentMomentum = playerRb.velocity;
-        Debug.Log(currentMomentum);
     }
 
     private void ReturnHook()
