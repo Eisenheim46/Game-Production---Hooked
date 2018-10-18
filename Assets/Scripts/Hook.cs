@@ -96,10 +96,6 @@ public class Hook : MonoBehaviour {
 
         }
 
-
-
-
-
         if (hooked)
         {
             if (controllerButtons.GetPress(SteamVR_Controller.ButtonMask.Grip))
