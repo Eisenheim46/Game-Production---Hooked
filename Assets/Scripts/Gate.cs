@@ -5,27 +5,30 @@ using UnityEngine;
 [RequireComponent(typeof(IsEnabled))]
 public class Gate : MonoBehaviour
 {
+    [SerializeField] private Transform gateUp;
+    [SerializeField] private Transform gateDown;
+    [SerializeField] private float speedUp = 1;
+    [SerializeField] private float speedDown = 1;
+    [SerializeField] private bool startsOpen = false;
 
-    private Animator animator;
-
-    void Start ()
+    private void Start()
     {
-        GetComponent<IsEnabled>().isEnabled = false;
-
-        animator = GetComponent<Animator>();
-        animator.SetBool("IsOpen", false);
-
+        if (startsOpen)
+            transform.position = gateUp.position;
+        else
+            transform.position = gateDown.position;
     }
 
     private void Update()
     {
         if (GetComponent<IsEnabled>().isEnabled)
         {
-            animator.SetBool("IsOpen", true);
+            transform.position = Vector3.MoveTowards(transform.position, gateUp.position, speedUp/100);
         }
         else
         {
-            animator.SetBool("IsOpen", false);
+            transform.position = Vector3.MoveTowards(transform.position, gateDown.position, speedDown/100);
         }
+
     }
 }
