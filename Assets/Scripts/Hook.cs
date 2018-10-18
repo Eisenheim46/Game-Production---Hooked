@@ -35,7 +35,6 @@ public class Hook : MonoBehaviour {
 
     private float currentHookDistance;
 
-    private bool fired;
     private bool hooked;
     private bool returning;
 
@@ -63,7 +62,6 @@ public class Hook : MonoBehaviour {
 
         ropeLine.enabled = false;
 
-        fired = false;
         hooked = false;
         returning = false;
 	}
@@ -71,20 +69,40 @@ public class Hook : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (fired == true && hooked == false)
+        if (controllerButtons.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            transform.parent = null;
-            hookRb.isKinematic = false;
+            //if (returning == false)
+            //{
+            //    firing = !firing;
+            //}
 
-            ropeLine.enabled = true;
+            //if (firing == false)
+            //{
+            //    returning = true;
+            //}
 
-            hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
+            //if (firing == true && hooked == false)
+            //{
+            //    transform.parent = null;
+
+            //    hookRb.isKinematic = false;
+
+            //    ropeLine.enabled = true;
+
+            //    hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
+            //}
+
+            ShootHook();
 
         }
 
+
+
+
+
         if (hooked)
         {
-            if (controllerButtons.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
+            if (controllerButtons.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {
                 ReelTowardsHook();
             }
@@ -107,19 +125,23 @@ public class Hook : MonoBehaviour {
         }
 
         RenderLine();
-        
+
     }
 
-    private void ShootHook (object sender, ClickedEventArgs e)
-    { 
+    private void ShootHook ()
+    {
+        if (returning == false && hooked == false)
 
-        if(returning == false)
         {
-            fired = !fired;
+            transform.parent = null;
+
+            hookRb.isKinematic = false;
+
+            ropeLine.enabled = true;
+
+            hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
         }
-
-
-        if (fired == false)
+        else
         {
             returning = true;
         }
@@ -174,7 +196,6 @@ public class Hook : MonoBehaviour {
             transform.position = hookOrigin.position;
 
             returning = false;
-            fired = false;
             hooked = false;
         }
     }

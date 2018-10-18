@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65226904141595682}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -121,7 +121,7 @@ BoxCollider:
   m_GameObject: {fileID: 1321786117125214}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
