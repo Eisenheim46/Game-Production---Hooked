@@ -8,10 +8,10 @@ public class Hook : MonoBehaviour {
     [SerializeField] private Transform hookOrigin;
     [SerializeField] private Transform lineOrigin;
     [SerializeField] private Transform player;
-    [SerializeField] private SteamVR_TrackedController controller;
+    //[SerializeField] private SteamVR_TrackedController controller;
 
-    [SerializeField]private SteamVR_TrackedObject trackedObj;
-    private SteamVR_Controller.Device controllerButtons { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
+    [SerializeField]private SteamVR_TrackedObject controller;
+    private SteamVR_Controller.Device controllerButtons { get { return SteamVR_Controller.Input((int)controller.index); } }
 
     [Header("Manual Input")]
     [SerializeField] private float hookSpeed;
@@ -39,15 +39,15 @@ public class Hook : MonoBehaviour {
     private bool hooked;
     private bool returning;
 
-    private void OnEnable()
-    {
-        controller.TriggerClicked += ShootHook;
-    }
+    //private void OnEnable()
+    //{
+    //    controller.TriggerClicked += ShootHook;
+    //}
 
-    private void OnDisable()
-    {
-        controller.TriggerClicked -= ShootHook;
-    }
+    //private void OnDisable()
+    //{
+    //    controller.TriggerClicked -= ShootHook;
+    //}
 
 
     // Use this for initialization
@@ -80,18 +80,11 @@ public class Hook : MonoBehaviour {
 
             hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
 
-
-            //currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
-
-            //if (currentHookDistance >= maxHookDistance)
-            //{
-            //    returning = true;
-            //}
         }
 
         if (hooked)
         {
-            if (controller.gripped)
+            if (controllerButtons.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
             {
                 ReelTowardsHook();
             }
@@ -99,19 +92,18 @@ public class Hook : MonoBehaviour {
             {
                 playerRb.isKinematic = false;
             }
-
         }
 
-        //if (returning)
-        //{
-        //    ReturnHook();
-        //}
+        if (returning)
+        {
+            ReturnHook();
+        }
 
         currentHookDistance = Vector3.Distance(hookOrigin.position, transform.position);
 
         if (currentHookDistance >= maxHookDistance)
         {
-            ReturnHook();
+            returning = true;
         }
 
         RenderLine();
