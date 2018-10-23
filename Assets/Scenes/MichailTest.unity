@@ -2035,6 +2035,11 @@ Prefab:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 897957580}
+    - target: {fileID: 114314068133651362, guid: 0d608f3ca1672b444867879e17804134,
+        type: 2}
+      propertyPath: requiredMass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d608f3ca1672b444867879e17804134, type: 2}
   m_IsPrefabParent: 0
