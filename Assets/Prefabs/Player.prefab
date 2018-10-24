@@ -2505,7 +2505,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hookOrigin: {fileID: 4564652098598848}
   lineOrigin: {fileID: 4004594161430616}
-  player: {fileID: 4367084302488180}
+  playerRig: {fileID: 4367084302488180}
+  playerCamera: {fileID: 4636889741921794}
   controller: {fileID: 114555854999704666}
   hookSpeed: 10
   playerSpeed: 5

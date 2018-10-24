@@ -7,9 +7,8 @@ public class Hook : MonoBehaviour {
 
     [SerializeField] private Transform hookOrigin;
     [SerializeField] private Transform lineOrigin;
-    [SerializeField] private Transform player;
-    //[SerializeField] private SteamVR_TrackedController controller;
-
+    [SerializeField] private Transform playerRig;
+    [SerializeField] private Transform playerCamera;
     [SerializeField]private SteamVR_TrackedObject controller;
     private SteamVR_Controller.Device controllerButtons { get { return SteamVR_Controller.Input((int)controller.index); } }
 
@@ -38,24 +37,14 @@ public class Hook : MonoBehaviour {
     private bool hooked;
     private bool returning;
 
-    //private void OnEnable()
-    //{
-    //    controller.TriggerClicked += ShootHook;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    controller.TriggerClicked -= ShootHook;
-    //}
-
 
     // Use this for initialization
     void Start ()
     {
         ropeLine = GetComponent<LineRenderer>();
         hookRb = GetComponent<Rigidbody>();
-        playerPhysics = player.GetComponent<PlayerPhysics>();
-        playerRb = player.GetComponent<Rigidbody>();
+        playerPhysics = playerRig.GetComponent<PlayerPhysics>();
+        playerRb = playerRig.GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
 
         hookParent = transform.parent;
@@ -71,29 +60,8 @@ public class Hook : MonoBehaviour {
     {
         if (controllerButtons.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            //if (returning == false)
-            //{
-            //    firing = !firing;
-            //}
-
-            //if (firing == false)
-            //{
-            //    returning = true;
-            //}
-
-            //if (firing == true && hooked == false)
-            //{
-            //    transform.parent = null;
-
-            //    hookRb.isKinematic = false;
-
-            //    ropeLine.enabled = true;
-
-            //    hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
-            //}
 
             ShootHook();
-
         }
 
         if (hooked)
@@ -157,7 +125,22 @@ public class Hook : MonoBehaviour {
 
         ropeLine.enabled = true;
 
-        player.position = Vector3.MoveTowards(player.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+        if (playerPhysics.OnFloor)
+        {
+            if (transform.position.y > playerCamera.position.y)
+            {
+                playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+            }
+            else
+            {
+                playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed);
+            }
+        }
+        else if (!playerPhysics.OnFloor)
+        {
+
+            playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+        }
     }
 
     private void ReturnHook()
