@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScriptTest.unity
     guid: d2032b5e7d8085540b967cf2676fd672
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 7c089b9b3964cde43acff3eb14b0a73d
   m_configObjects: {}

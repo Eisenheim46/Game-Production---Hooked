@@ -8,7 +8,7 @@ public class EndScene : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
-            SceneManager.LoadScene("EndScene", LoadSceneMode.Additive);
+            SceneManager.LoadScene("EndScene");
     }
 
 
