@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Valve.VR;
 using UnityEngine;
 
-public class Hook : MonoBehaviour {
+public class CustomHook : MonoBehaviour {
 
     [SerializeField] private Transform hookOrigin;
     [SerializeField] private Transform lineOrigin;
@@ -25,7 +25,7 @@ public class Hook : MonoBehaviour {
 
     private LineRenderer ropeLine;
     private Rigidbody hookRb;
-    private Rigidbody playerRb;
+
     private Transform hookParent;
     private Transform retractedObject;
     private AudioSource audio;
@@ -44,7 +44,7 @@ public class Hook : MonoBehaviour {
         ropeLine = GetComponent<LineRenderer>();
         hookRb = GetComponent<Rigidbody>();
         playerPhysics = playerRig.GetComponent<PlayerPhysics>();
-        playerRb = playerRig.GetComponent<Rigidbody>();
+
         audio = GetComponent<AudioSource>();
 
         hookParent = transform.parent;
@@ -60,6 +60,7 @@ public class Hook : MonoBehaviour {
     {
         if (controllerButtons.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
+
             ShootHook();
         }
 
@@ -71,8 +72,7 @@ public class Hook : MonoBehaviour {
             }
             else if (controllerButtons.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
             {
-                playerRb.useGravity = true;
-                playerRb.isKinematic = false;
+
             }
         }
 
@@ -107,8 +107,6 @@ public class Hook : MonoBehaviour {
         }
         else
         {
-            hooked = false;
-
             returning = true;
         }
             
@@ -120,15 +118,6 @@ public class Hook : MonoBehaviour {
 
         hookRb.isKinematic = true;
 
-        if (playerRb.isKinematic == true)
-        {
-            playerRb.isKinematic = false;
-        }
-
-        if (playerRb.useGravity == true)
-        {
-            playerRb.useGravity = false;
-        }
 
         ropeLine.enabled = true;
 
@@ -136,21 +125,16 @@ public class Hook : MonoBehaviour {
         {
             if (transform.position.y > playerCamera.position.y)
             {
-                //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime* playerSpeed;
-                //playerRb.MovePosition(playerRb.position + newPosition);
                 playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
             }
             else
             {
-                //Vector3 newPosition = new Vector3(transform.position.x, playerRig.position.y, transform.position.z) * Time.deltaTime * playerSpeed;
-                //playerRb.MovePosition(playerRb.position + newPosition);
                 playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed);
             }
         }
         else if (!playerPhysics.OnFloor)
         {
-            //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime * playerSpeed;
-            //playerRb.MovePosition(playerRb.position + newPosition);
+
             playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
         }
     }
@@ -161,11 +145,6 @@ public class Hook : MonoBehaviour {
 
         hookRb.isKinematic = true;
 
-        if (!playerPhysics.OnFloor && playerRb.useGravity == false)
-        {
-            playerRb.useGravity = true;
-            playerRb.isKinematic = false;
-        }
 
         this.transform.position = Vector3.MoveTowards(transform.position, hookOrigin.position, Time.deltaTime * hookSpeed);
 

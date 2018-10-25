@@ -13,8 +13,6 @@ public class PlayerPhysics : MonoBehaviour {
     private void Start()
     {
         cameraRb = GetComponent<Rigidbody>();
-
-        //onFloor = true;
     }
 
 
@@ -23,6 +21,7 @@ public class PlayerPhysics : MonoBehaviour {
     {
         if (other.gameObject.tag == "Floor")
         { 
+
             cameraRb.isKinematic = true;
             onFloor = true;
         }
