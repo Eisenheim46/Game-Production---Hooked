@@ -6,10 +6,12 @@ TagManager:
   tags:
   - Hook
   - Hookable
-  - Wooden
-  - Metal
   - Floor
   - Key
+  - Door
+  - Gate
+  - Wood
+  - Metal
   layers:
   - Default
   - TransparentFX
