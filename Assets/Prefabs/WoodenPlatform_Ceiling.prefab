@@ -26,7 +26,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1039129149385224
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1056112474180894
 GameObject:
@@ -62,7 +62,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1056735786776702
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1193809078207894
 GameObject:
@@ -96,7 +96,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1227278783851474
 GameObject:
@@ -114,7 +114,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1373883173319302
 GameObject:
@@ -131,7 +131,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1439395511028612
 GameObject:
@@ -146,10 +146,10 @@ GameObject:
   - component: {fileID: 65504352611309486}
   m_Layer: 0
   m_Name: polySurface41 (1)
-  m_TagString: Hookable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1475160829947734
 GameObject:
@@ -166,7 +166,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1574061775696396
 GameObject:
@@ -181,10 +181,10 @@ GameObject:
   - component: {fileID: 65072782223691140}
   m_Layer: 0
   m_Name: polySurface40 (3)
-  m_TagString: Hookable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1589523398920222
 GameObject:
@@ -199,10 +199,10 @@ GameObject:
   - component: {fileID: 65602234519201516}
   m_Layer: 0
   m_Name: polySurface40 (2)
-  m_TagString: Hookable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1652936142073666
 GameObject:
@@ -219,7 +219,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1697145843313298
 GameObject:
@@ -236,7 +236,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1698384507341688
 GameObject:
@@ -251,10 +251,10 @@ GameObject:
   - component: {fileID: 65826014299529772}
   m_Layer: 0
   m_Name: polySurface41 (2)
-  m_TagString: Hookable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1774062356423000
 GameObject:
@@ -271,7 +271,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1923424428332820
 GameObject:
@@ -287,7 +287,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1938619315864068
 GameObject:
@@ -304,7 +304,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1977855188277238
 GameObject:
@@ -321,7 +321,7 @@ GameObject:
   m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4016673806700480
 Transform:
@@ -342,9 +342,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923424428332820}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.5000003, y: 0.5000004, z: 0.49999973, w: 0.4999997}
+  m_LocalPosition: {x: 10.232, y: 3.343, z: -4.523}
+  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
   m_Children:
   - {fileID: 4016673806700480}
   - {fileID: 4249490282564178}
@@ -365,7 +365,7 @@ Transform:
   - {fileID: 4221720086938988}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 90.00001}
 --- !u!4 &4089244960704908
 Transform:
   m_ObjectHideFlags: 1
