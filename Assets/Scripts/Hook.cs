@@ -22,6 +22,7 @@ public class Hook : MonoBehaviour {
     [SerializeField] private AudioClip shootClip;
     [SerializeField] private AudioClip pullClip;
     [SerializeField] private AudioClip hitClip;
+    [SerializeField] private AnimationCurve Curve;
 
     private LineRenderer ropeLine;
     private Rigidbody hookRb;
@@ -137,21 +138,34 @@ public class Hook : MonoBehaviour {
             if (transform.position.y > playerCamera.position.y)
             {
                 //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime* playerSpeed;
-                //playerRb.MovePosition(playerRb.position + newPosition);
-                playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+                playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * Curve.Evaluate(Time.deltaTime) * playerSpeed));
+
+                //playerRb.AddForce((playerRb.position + newPosition) * 100);
+
+                Debug.Log(playerRb.velocity);
+            
+                //playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
             }
             else
             {
                 //Vector3 newPosition = new Vector3(transform.position.x, playerRig.position.y, transform.position.z) * Time.deltaTime * playerSpeed;
-                //playerRb.MovePosition(playerRb.position + newPosition);
-                playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed);
+                playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed));
+                //playerRb.AddForce((playerRb.position + newPosition) * 100);
+
+                Debug.Log(playerRb.velocity);
+
+                //playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed);
             }
         }
         else if (!playerPhysics.OnFloor)
         {
             //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime * playerSpeed;
-            //playerRb.MovePosition(playerRb.position + newPosition);
-            playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+            playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed));
+            // playerRb.AddForce((playerRb.position + newPosition) * 100);
+
+            Debug.Log(playerRb.velocity);
+
+            //playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
         }
     }
 

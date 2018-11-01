@@ -29,12 +29,12 @@ public class HandSounds : MonoBehaviour
             audio.clip = metalClip;
             audio.PlayDelayed(0);
         }
-        if (collision.gameObject.tag == "door")
+        if (collision.gameObject.tag == "Door")
         {
             audio.clip = doorClip;
             audio.PlayDelayed(0);
         }
-        if (collision.gameObject.tag == "gate")
+        if (collision.gameObject.tag == "Gate")
         {
             audio.clip = gateClip;
             audio.PlayDelayed(0);
