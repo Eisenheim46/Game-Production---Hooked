@@ -2,15 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandSounds : MonoBehaviour {
+public class HandSounds : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private AudioClip woodClip;
+    [SerializeField] private AudioClip metalClip;
+    [SerializeField] private AudioClip doorClip;
+    [SerializeField] private AudioClip gateClip;
+
+    private AudioSource audio;
+
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wood")
+        {
+            audio.clip = woodClip;
+            audio.PlayDelayed(0);
+        }
+        if (collision.gameObject.tag == "Metal")
+        {
+            audio.clip = metalClip;
+            audio.PlayDelayed(0);
+        }
+        if (collision.gameObject.tag == "door")
+        {
+            audio.clip = doorClip;
+            audio.PlayDelayed(0);
+        }
+        if (collision.gameObject.tag == "gate")
+        {
+            audio.clip = gateClip;
+            audio.PlayDelayed(0);
+        }
+    }
 }

@@ -2730,6 +2730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0eefbe342e48d4e9c30e0059e8b7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodClip: {fileID: 8300000, guid: 18ce9540513bc794fb8656795655930e, type: 3}
+  metalClip: {fileID: 8300000, guid: 884ac66a470de4a4fbe6e9c6e37d29f5, type: 3}
+  doorClip: {fileID: 8300000, guid: 4e531390a34725e4e80ebdff2b1c6968, type: 3}
+  gateClip: {fileID: 8300000, guid: 8053c57e449f741458212317aa080ced, type: 3}
 --- !u!114 &114424746091420848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2741,6 +2745,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae8b728592a69743b8a9ff6d1c25cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodClip: {fileID: 8300000, guid: c0e701b2a7582a8479795271bf19f1c7, type: 3}
+  metalClip: {fileID: 8300000, guid: 013999fe8980e734b86fbbf04ae3ea02, type: 3}
+  doorClip: {fileID: 8300000, guid: 6c074f717e06b97488c40a89f8ccf316, type: 3}
+  gateClip: {fileID: 8300000, guid: 6468d9fe62ecabc4b99b94174d54fda2, type: 3}
 --- !u!114 &114494720940184554
 MonoBehaviour:
   m_ObjectHideFlags: 1
