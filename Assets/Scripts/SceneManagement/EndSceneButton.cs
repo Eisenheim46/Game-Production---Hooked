@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 public class EndSceneButton : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private bool restartGame;
+    [SerializeField] private bool loadScene;
     [SerializeField] private bool quitGame;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Hook")
         {
-            if (restartGame)
+            if (loadScene)
             {
-                RestartGame();
+                LoadScene();
             }
             else if (quitGame)
             {
@@ -24,7 +24,7 @@ public class EndSceneButton : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
     }
