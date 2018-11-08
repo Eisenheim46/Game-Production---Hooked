@@ -31,7 +31,8 @@ public class Hook : MonoBehaviour {
     private Transform retractedObject;
     private AudioSource audio;
     private PlayerPhysics playerPhysics;
-    
+
+    private Vector3 target;
 
     private float currentHookDistance;
 
@@ -74,6 +75,12 @@ public class Hook : MonoBehaviour {
             {
                 playerRb.useGravity = true;
                 playerRb.isKinematic = false;
+
+                Vector3 direction = target - playerRb.position;
+
+                direction = Vector3.Normalize(direction);
+
+                playerRb.velocity = direction * (playerSpeed * 10) * Time.deltaTime;
             }
         }
 
@@ -137,35 +144,31 @@ public class Hook : MonoBehaviour {
         {
             if (transform.position.y > playerCamera.position.y)
             {
-                //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime* playerSpeed;
-                playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * Curve.Evaluate(Time.deltaTime) * playerSpeed));
+                target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
 
-                //playerRb.AddForce((playerRb.position + newPosition) * 100);
+                playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
 
-                Debug.Log(playerRb.velocity);
-            
-                //playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
             }
             else
             {
                 //Vector3 newPosition = new Vector3(transform.position.x, playerRig.position.y, transform.position.z) * Time.deltaTime * playerSpeed;
-                playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed));
-                //playerRb.AddForce((playerRb.position + newPosition) * 100);
+                // playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed));
 
-                Debug.Log(playerRb.velocity);
+                target = new Vector3(transform.position.x, playerRig.position.y, transform.position.z);
 
-                //playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed);
+                playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+
             }
         }
         else if (!playerPhysics.OnFloor)
         {
             //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime * playerSpeed;
-            playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed));
-            // playerRb.AddForce((playerRb.position + newPosition) * 100);
+            // playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed));
 
-            Debug.Log(playerRb.velocity);
+            target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
 
-            //playerRig.position = Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed);
+            playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+
         }
     }
 
