@@ -2607,12 +2607,37 @@ MonoBehaviour:
   playerCamera: {fileID: 4636889741921794}
   controller: {fileID: 114555854999704666}
   hookSpeed: 10
-  playerSpeed: 1
+  playerSpeed: 5
+  velocityMultiplier: 0
   maxHookDistance: 10
   maxReturnDistance: 0.5
   shootClip: {fileID: 8300000, guid: 2908c0e62710945419e8e797a72e0ab7, type: 3}
   pullClip: {fileID: 8300000, guid: 3f5a49a413d6f2e40b1c29418f0d14e9, type: 3}
   hitClip: {fileID: 8300000, guid: da973aa05ea5f6f4984d39fba27bfb5c, type: 3}
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114019490943708312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2677,6 +2702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88f3361c4e564847b96b0ba7e0d8179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hook: {fileID: 114000374807582144}
 --- !u!114 &114139565920110468
 MonoBehaviour:
   m_ObjectHideFlags: 1

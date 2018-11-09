@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 034a694c2f8667048a92616c31eadb7e
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone_Arm
+    100002: Bone_Index_Distal
+    100004: Bone_Index_Metacarpal
+    100006: Bone_Index_Middle
+    100008: Bone_Index_Proximal
+    100010: Bone_Little_Distal
+    100012: Bone_Little_Metacarpal
+    100014: Bone_Little_Middle
+    100016: Bone_Little_Proximal
+    100018: Bone_Middle_Distal
+    100020: Bone_Middle_Metacarpal
+    100022: Bone_Middle_Middle
+    100024: Bone_Middle_Proximal
+    100026: Bone_Ring_Distal
+    100028: Bone_Ring_Metacarpal
+    100030: Bone_Ring_Middle
+    100032: Bone_Ring_Proximal
+    100034: Bone_Thumb_Distal
+    100036: Bone_Thumb_Metacarpal
+    100038: Bone_Thumb_Proximal
+    100040: End_Index
+    100042: End_Little
+    100044: End_Middle
+    100046: End_Ring
+    100048: End_Thumb
+    100050: Hand
+    100052: //RootNode
+    400000: Bone_Arm
+    400002: Bone_Index_Distal
+    400004: Bone_Index_Metacarpal
+    400006: Bone_Index_Middle
+    400008: Bone_Index_Proximal
+    400010: Bone_Little_Distal
+    400012: Bone_Little_Metacarpal
+    400014: Bone_Little_Middle
+    400016: Bone_Little_Proximal
+    400018: Bone_Middle_Distal
+    400020: Bone_Middle_Metacarpal
+    400022: Bone_Middle_Middle
+    400024: Bone_Middle_Proximal
+    400026: Bone_Ring_Distal
+    400028: Bone_Ring_Metacarpal
+    400030: Bone_Ring_Middle
+    400032: Bone_Ring_Proximal
+    400034: Bone_Thumb_Distal
+    400036: Bone_Thumb_Metacarpal
+    400038: Bone_Thumb_Proximal
+    400040: End_Index
+    400042: End_Little
+    400044: End_Middle
+    400046: End_Ring
+    400048: End_Thumb
+    400050: Hand
+    400052: //RootNode
+    2100000: default
+    4300000: Hand
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Hand
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
