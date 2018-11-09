@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerPhysics : MonoBehaviour {
 
+    [SerializeField] Hook hook;
+
     private Rigidbody cameraRb;
 
     private bool onFloor;
@@ -19,7 +21,10 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Floor")
+        Debug.Log(hook.GripPressed);
+        Debug.Log(other.gameObject.tag);
+
+        if (other.gameObject.tag == "Floor" && !hook.GripPressed)
         { 
 
             cameraRb.isKinematic = true;

@@ -12,9 +12,12 @@ public class Hook : MonoBehaviour {
     [SerializeField]private SteamVR_TrackedObject controller;
     private SteamVR_Controller.Device controllerButtons { get { return SteamVR_Controller.Input((int)controller.index); } }
 
+    public bool GripPressed { get; private set; }
+
     [Header("Manual Input")]
     [SerializeField] private float hookSpeed;
     [SerializeField] private float playerSpeed;
+    [SerializeField] private float velocityMultiplier;
     [SerializeField] private float maxHookDistance;
     [SerializeField] private float maxReturnDistance;
 
@@ -31,8 +34,6 @@ public class Hook : MonoBehaviour {
     private Transform retractedObject;
     private AudioSource audio;
     private PlayerPhysics playerPhysics;
-
-    private Vector3 target;
 
     private float currentHookDistance;
 
@@ -69,18 +70,22 @@ public class Hook : MonoBehaviour {
         {
             if (controllerButtons.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {
+                GripPressed = true;
+
                 ReelTowardsHook();
             }
             else if (controllerButtons.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
             {
+                GripPressed = false;
+
                 playerRb.useGravity = true;
                 playerRb.isKinematic = false;
 
-                Vector3 direction = target - playerRb.position;
+                //Vector3 direction = target - playerRb.position;
 
-                direction = Vector3.Normalize(direction);
+                //direction = Vector3.Normalize(direction);
 
-                playerRb.velocity = direction * (playerSpeed * 10) * Time.deltaTime;
+                //playerRb.velocity = direction * (playerSpeed * velocitySpeed) * Time.deltaTime;
             }
         }
 
@@ -144,30 +149,61 @@ public class Hook : MonoBehaviour {
         {
             if (transform.position.y > playerCamera.position.y)
             {
-                target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                Vector3 target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
 
-                playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+                //playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+                Vector3 direction = target - playerRb.position;
+
+                if (direction.magnitude <= playerSpeed * Time.deltaTime || direction.magnitude == 0f)
+                {
+                    playerRb.velocity = Vector3.zero;
+                }
+                else
+                {
+                    direction = Vector3.Normalize(direction);
+
+                    playerRb.velocity = direction * (playerSpeed * velocityMultiplier) * Time.deltaTime;
+                }
 
             }
             else
             {
-                //Vector3 newPosition = new Vector3(transform.position.x, playerRig.position.y, transform.position.z) * Time.deltaTime * playerSpeed;
-                // playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, playerRig.position.y, transform.position.z), Time.deltaTime * playerSpeed));
+                Vector3 target = new Vector3(transform.position.x, playerRb.position.y, transform.position.z);
 
-                target = new Vector3(transform.position.x, playerRig.position.y, transform.position.z);
+                //playerRb.position = Vector3.MoveTowards(playerRb.position, target, Time.deltaTime * playerSpeed);
+                Vector3 direction = target - playerRb.position;
 
-                playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+                if (direction.magnitude <= playerSpeed * Time.deltaTime || direction.magnitude == 0f)
+                {
+                    playerRb.velocity = Vector3.zero;
+                }
+                else
+                {
+                    direction = Vector3.Normalize(direction);
+
+                    playerRb.velocity = direction * (playerSpeed * velocityMultiplier) * Time.deltaTime;
+                }
 
             }
         }
         else if (!playerPhysics.OnFloor)
         {
-            //Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z) * Time.deltaTime * playerSpeed;
-            // playerRb.MovePosition(Vector3.MoveTowards(playerRig.position, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Time.deltaTime * playerSpeed));
+            Vector3 target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
 
-            target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            // playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
 
-            playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+            Vector3 direction = target - playerRb.position;
+
+            if (direction.magnitude <= playerSpeed * Time.deltaTime || direction.magnitude == 0f)
+            {
+                playerRb.velocity = Vector3.zero;
+            }
+            else
+            {
+                direction = Vector3.Normalize(direction);
+
+                playerRb.velocity = direction * (playerSpeed * velocityMultiplier) * Time.deltaTime;
+            }
 
         }
     }
@@ -175,6 +211,8 @@ public class Hook : MonoBehaviour {
     private void ReturnHook()
     {
         hookRb.velocity = new Vector3(0, 0, 0);
+
+        hooked = false;
 
         hookRb.isKinematic = true;
 
@@ -205,7 +243,6 @@ public class Hook : MonoBehaviour {
             transform.position = hookOrigin.position;
 
             returning = false;
-            hooked = false;
         }
     }
 
