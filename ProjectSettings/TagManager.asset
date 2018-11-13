@@ -12,6 +12,8 @@ TagManager:
   - Gate
   - Wood
   - Metal
+  - Wall
+  - Ceiling
   layers:
   - Default
   - TransparentFX

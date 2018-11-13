@@ -80,12 +80,6 @@ public class Hook : MonoBehaviour {
 
                 playerRb.useGravity = true;
                 playerRb.isKinematic = false;
-
-                //Vector3 direction = target - playerRb.position;
-
-                //direction = Vector3.Normalize(direction);
-
-                //playerRb.velocity = direction * (playerSpeed * velocitySpeed) * Time.deltaTime;
             }
         }
 
@@ -147,54 +141,48 @@ public class Hook : MonoBehaviour {
 
         if (playerPhysics.OnFloor)
         {
+            Vector3 direction;
+            float magnitude;
+
             if (transform.position.y > playerCamera.position.y)
             {
-                Vector3 target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                Vector3 target = new Vector3(transform.position.x, transform.position.y /*- 1*/, transform.position.z);
+                target = target - playerCamera.position;
 
-                //playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
-                Vector3 direction = target - playerRb.position;
-
-                if (direction.magnitude <= playerSpeed * Time.deltaTime || direction.magnitude == 0f)
-                {
-                    playerRb.velocity = Vector3.zero;
-                }
-                else
-                {
-                    direction = Vector3.Normalize(direction);
-
-                    playerRb.velocity = direction * (playerSpeed * velocityMultiplier) * Time.deltaTime;
-                }
-
+                direction = target - playerRb.position;
+                magnitude = direction.magnitude;
             }
             else
             {
                 Vector3 target = new Vector3(transform.position.x, playerRb.position.y, transform.position.z);
+                target.x -= playerCamera.position.x;
+                target.z -= playerCamera.position.z;
 
-                //playerRb.position = Vector3.MoveTowards(playerRb.position, target, Time.deltaTime * playerSpeed);
-                Vector3 direction = target - playerRb.position;
+                direction = target - playerRb.position;
+                magnitude = direction.magnitude;
+            }
 
-                if (direction.magnitude <= playerSpeed * Time.deltaTime || direction.magnitude == 0f)
-                {
-                    playerRb.velocity = Vector3.zero;
-                }
-                else
-                {
-                    direction = Vector3.Normalize(direction);
 
-                    playerRb.velocity = direction * (playerSpeed * velocityMultiplier) * Time.deltaTime;
-                }
+            if (magnitude <= playerSpeed * Time.deltaTime || magnitude == 0f)
+            {
+                playerRb.velocity = Vector3.zero;
+            }
+            else
+            {
+                direction = Vector3.Normalize(direction);
 
+                playerRb.velocity = direction * (playerSpeed * velocityMultiplier) * Time.deltaTime;
             }
         }
         else if (!playerPhysics.OnFloor)
         {
-            Vector3 target = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-
-            // playerRb.position = Vector3.MoveTowards(playerRig.position, target, Time.deltaTime * playerSpeed);
+            Vector3 target = new Vector3(transform.position.x, transform.position.y /*- 1*/, transform.position.z);
+            target = target - playerCamera.position;
 
             Vector3 direction = target - playerRb.position;
+            float magnitude = direction.magnitude;
 
-            if (direction.magnitude <= playerSpeed * Time.deltaTime || direction.magnitude == 0f)
+            if (magnitude <= playerSpeed * Time.deltaTime || magnitude == 0f)
             {
                 playerRb.velocity = Vector3.zero;
             }

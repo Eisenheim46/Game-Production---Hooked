@@ -12,6 +12,8 @@ public class Deathzone : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             player.transform.position = checkpoint.position;
+
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 }
