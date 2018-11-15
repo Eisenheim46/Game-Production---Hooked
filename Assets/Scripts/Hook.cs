@@ -59,7 +59,7 @@ public class Hook : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         if (controllerButtons.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
