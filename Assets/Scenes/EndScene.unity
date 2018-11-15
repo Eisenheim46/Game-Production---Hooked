@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731744, g: 0.1341477, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainScene
-  restartGame: 0
+  loadScene: 0
   quitGame: 0
 --- !u!1 &118050789
 GameObject:
@@ -376,8 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1c7dfba66097545b1a1d7e7baf3ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainScene
-  restartGame: 1
+  sceneName: MenuScene
+  loadScene: 1
   quitGame: 0
 --- !u!1 &178881207
 GameObject:
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainScene
-  restartGame: 0
+  loadScene: 0
   quitGame: 1
 --- !u!1 &239738409
 GameObject:
@@ -1117,7 +1117,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
