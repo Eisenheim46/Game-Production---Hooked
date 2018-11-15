@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnablePhysics : MonoBehaviour {
+public class EnableChildPhysics : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
