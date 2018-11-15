@@ -54,6 +54,7 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
+        cameraRb.useGravity = true;
         cameraRb.isKinematic = false;
         OnFloor = false;
     }

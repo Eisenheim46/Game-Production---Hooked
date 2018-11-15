@@ -147,7 +147,10 @@ public class Hook : MonoBehaviour {
             if (transform.position.y > playerCamera.position.y)
             {
                 Vector3 target = new Vector3(transform.position.x, transform.position.y /*- 1*/, transform.position.z);
-                target = target - playerCamera.position;
+
+                Vector3 offeset = playerCamera.position - playerRig.position;
+
+                target = target - offeset;
 
                 direction = target - playerRb.position;
                 magnitude = direction.magnitude;
@@ -155,8 +158,6 @@ public class Hook : MonoBehaviour {
             else
             {
                 Vector3 target = new Vector3(transform.position.x, playerRb.position.y, transform.position.z);
-                target.x -= playerCamera.position.x;
-                target.z -= playerCamera.position.z;
 
                 direction = target - playerRb.position;
                 magnitude = direction.magnitude;
@@ -177,7 +178,10 @@ public class Hook : MonoBehaviour {
         else if (!playerPhysics.OnFloor)
         {
             Vector3 target = new Vector3(transform.position.x, transform.position.y /*- 1*/, transform.position.z);
-            target = target - playerCamera.position;
+
+            Vector3 offeset = playerCamera.position - playerRig.position;
+
+            target = target - offeset;
 
             Vector3 direction = target - playerRb.position;
             float magnitude = direction.magnitude;
