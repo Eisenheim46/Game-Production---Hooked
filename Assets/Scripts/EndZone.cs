@@ -10,8 +10,8 @@ public class EndZone : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-
-        SceneManager.LoadScene("EndScene");
+        if (other.gameObject.tag == "Player")
+            SceneManager.LoadScene("EndScene");
 
     }
 

@@ -116,6 +116,8 @@ public class Hook : MonoBehaviour {
         {
             hooked = false;
 
+            GripPressed = false;
+
             returning = true;
         }
             
@@ -146,7 +148,7 @@ public class Hook : MonoBehaviour {
 
             if (transform.position.y > playerCamera.position.y)
             {
-                Vector3 target = new Vector3(transform.position.x, transform.position.y /*- 1*/, transform.position.z);
+                Vector3 target = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
                 Vector3 offeset = playerCamera.position - playerRig.position;
 
@@ -177,7 +179,7 @@ public class Hook : MonoBehaviour {
         }
         else if (!playerPhysics.OnFloor)
         {
-            Vector3 target = new Vector3(transform.position.x, transform.position.y /*- 1*/, transform.position.z);
+            Vector3 target = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
             Vector3 offeset = playerCamera.position - playerRig.position;
 
