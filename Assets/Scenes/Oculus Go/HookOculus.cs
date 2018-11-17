@@ -84,9 +84,12 @@ public class HookOculus : MonoBehaviour {
             {
                 retractedObject.parent = null;
                 retractedObject.GetComponent<Rigidbody>().isKinematic = false;
+                retractedObject.GetComponent<Collider>().enabled = true;
 
                 retractedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTrackedRemote) * 50f;
                 retractedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTrackedRemote) * .5f;
+
+                
 
                 returning = true;
             }
@@ -273,11 +276,10 @@ public class HookOculus : MonoBehaviour {
                 retractedObject.rotation = this.transform.rotation;
 
                 retractedObject.GetComponent<Rigidbody>().isKinematic = true;
+                retractedObject.GetComponent<Collider>().enabled = false;
 
                 returning = true;
             }
-
-            return;
         }
         else
         {

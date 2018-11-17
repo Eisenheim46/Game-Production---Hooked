@@ -2005,7 +2005,7 @@ GameObject:
   - component: {fileID: 322336507}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2033,7 +2033,7 @@ BoxCollider:
   m_GameObject: {fileID: 322336505}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -3743,7 +3743,7 @@ GameObject:
   - component: {fileID: 557138902}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3771,7 +3771,7 @@ BoxCollider:
   m_GameObject: {fileID: 557138900}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -5278,7 +5278,7 @@ GameObject:
   - component: {fileID: 863624523}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5306,7 +5306,7 @@ BoxCollider:
   m_GameObject: {fileID: 863624521}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -5979,7 +5979,7 @@ GameObject:
   - component: {fileID: 936764385}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6007,7 +6007,7 @@ BoxCollider:
   m_GameObject: {fileID: 936764383}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -7978,7 +7978,7 @@ GameObject:
   - component: {fileID: 1293200615}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8006,7 +8006,7 @@ BoxCollider:
   m_GameObject: {fileID: 1293200613}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -9075,7 +9075,7 @@ GameObject:
   - component: {fileID: 1500434559}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9103,7 +9103,7 @@ BoxCollider:
   m_GameObject: {fileID: 1500434557}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -9271,7 +9271,7 @@ GameObject:
   - component: {fileID: 1508326392}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9299,7 +9299,7 @@ BoxCollider:
   m_GameObject: {fileID: 1508326390}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -9575,7 +9575,7 @@ GameObject:
   - component: {fileID: 1570338580}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9603,7 +9603,7 @@ BoxCollider:
   m_GameObject: {fileID: 1570338578}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -10463,7 +10463,7 @@ GameObject:
   - component: {fileID: 1837127844}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -10491,7 +10491,7 @@ BoxCollider:
   m_GameObject: {fileID: 1837127842}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -11109,7 +11109,7 @@ GameObject:
   - component: {fileID: 1955632054}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11137,7 +11137,7 @@ BoxCollider:
   m_GameObject: {fileID: 1955632052}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -11732,7 +11732,7 @@ GameObject:
   - component: {fileID: 2062468091}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11760,7 +11760,7 @@ BoxCollider:
   m_GameObject: {fileID: 2062468089}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
@@ -11822,7 +11822,7 @@ GameObject:
   - component: {fileID: 2064563739}
   m_Layer: 0
   m_Name: polySurface18_polySurface8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11850,7 +11850,7 @@ BoxCollider:
   m_GameObject: {fileID: 2064563737}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.536807, y: 0.12643409, z: 2.6794024}
   m_Center: {x: 0.06843138, y: -0.46932828, z: 1.8471327}
