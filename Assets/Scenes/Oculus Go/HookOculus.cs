@@ -70,23 +70,24 @@ public class HookOculus : MonoBehaviour {
         {
             returning = true;
 
+            shooting = false;
+
             playerPhysics.TriggerPressed = false;
         }
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad))
         {
-            Transform origin;
 
             if (retractedObject != null)
             {
-                origin = transform.parent;
-
                 retractedObject.parent = null;
                 retractedObject.GetComponent<Rigidbody>().isKinematic = false;
 
-                retractedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTrackedRemote) * 5f;
-                retractedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTrackedRemote) * 2f;
+                retractedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTrackedRemote) * 50f;
+                retractedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTrackedRemote) * .5f;
             }
+
+            returning = true;
         }
 
         if (hooked)
@@ -122,6 +123,8 @@ public class HookOculus : MonoBehaviour {
             ropeLine.enabled = true;
 
             hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
+
+            shooting = true;
         }
         //else
         //{
@@ -255,7 +258,7 @@ public class HookOculus : MonoBehaviour {
             hookRb.velocity = new Vector3 (0,0,0);
             hooked = true;
         }
-        else if (collision.gameObject.tag == "Wood")
+        else if (collision.gameObject.tag == "Wood" && shooting)
         {
             if (collision.transform.parent != this.transform)
             {
