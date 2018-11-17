@@ -85,9 +85,9 @@ public class HookOculus : MonoBehaviour {
 
                 retractedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTrackedRemote) * 50f;
                 retractedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTrackedRemote) * .5f;
-            }
 
-            returning = true;
+                returning = true;
+            }
         }
 
         if (hooked)
@@ -258,9 +258,9 @@ public class HookOculus : MonoBehaviour {
             hookRb.velocity = new Vector3 (0,0,0);
             hooked = true;
         }
-        else if (collision.gameObject.tag == "Wood" && shooting)
+        else if (collision.gameObject.tag == "Wood")
         {
-            if (collision.transform.parent != this.transform)
+            if (collision.transform.parent != this.transform && shooting)
             {
                 retractedObject = collision.transform;
 

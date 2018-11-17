@@ -8004,7 +8004,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a1936cc3a36daba43b5bf2a2329cf80d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dc658df8d609b5d48a596cb9fc129c9b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -14617,7 +14617,7 @@ Prefab:
     - target: {fileID: 59466263673892204, guid: bfae1f5627bacc749bdcc9e35a3c2816,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.69400024
+      value: 1.894001
       objectReference: {fileID: 0}
     - target: {fileID: 59466263673892204, guid: bfae1f5627bacc749bdcc9e35a3c2816,
         type: 2}
@@ -14667,6 +14667,11 @@ Prefab:
     - target: {fileID: 4313270644362920, guid: bfae1f5627bacc749bdcc9e35a3c2816, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.83500004
+      objectReference: {fileID: 0}
+    - target: {fileID: 59466263673892204, guid: bfae1f5627bacc749bdcc9e35a3c2816,
+        type: 2}
+      propertyPath: m_Anchor.x
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfae1f5627bacc749bdcc9e35a3c2816, type: 2}
@@ -21761,8 +21766,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.5, z: 0.5}
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!54 &962554856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21785,7 +21790,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 962554853}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: 0}
+  m_LocalPosition: {x: 0, y: 1.532, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 543292660}
