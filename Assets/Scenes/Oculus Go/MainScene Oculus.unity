@@ -41085,6 +41085,22 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1574061775696396, guid: ee6833e56eb284c45acea56eea80e8ea, type: 2}
+      propertyPath: m_TagString
+      value: Hookable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698384507341688, guid: ee6833e56eb284c45acea56eea80e8ea, type: 2}
+      propertyPath: m_TagString
+      value: Hookable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589523398920222, guid: ee6833e56eb284c45acea56eea80e8ea, type: 2}
+      propertyPath: m_TagString
+      value: Hookable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439395511028612, guid: ee6833e56eb284c45acea56eea80e8ea, type: 2}
+      propertyPath: m_TagString
+      value: Hookable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee6833e56eb284c45acea56eea80e8ea, type: 2}
   m_IsPrefabParent: 0
