@@ -9498,8 +9498,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417444732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -3.1401849e-16, z: -3.1401849e-16, w: 1}
+  m_LocalPosition: {x: 1, y: 0.24999964, z: 2.0570006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1145073705}
@@ -24814,8 +24814,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1145073701}
   m_LocalRotation: {x: -0, y: -3.1401849e-16, z: -3.1401849e-16, w: 1}
-  m_LocalPosition: {x: 1, y: 0.24999964, z: 2.0570006}
-  m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.50000024}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 417444733}
   m_RootOrder: 0
@@ -30900,8 +30900,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1382659547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.414, y: 3.117, z: 12.496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1984375997}
@@ -46719,7 +46719,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1984375996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.414, y: 3.117, z: 12.496}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1382659548}
@@ -47364,8 +47364,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.14594, y: 10, z: 26.710464}
-  m_Center: {x: -0.058084488, y: 0, z: 1.5531693}
+  m_Size: {x: 53.096123, y: 10, z: 37.90673}
+  m_Center: {x: -8.533176, y: 0, z: -4.044964}
 --- !u!4 &2003979914
 Transform:
   m_ObjectHideFlags: 0
@@ -47390,7 +47390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f148846075b704cb785fa1b503342d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 962554853}
   checkpoint: {fileID: 1422419450}
 --- !u!65 &2003979916
 BoxCollider:
@@ -47402,8 +47402,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 29.24012, y: 1, z: 16.152805}
-  m_Center: {x: -3.420803, y: 0, z: 22.990847}
+  m_Size: {x: 46.39508, y: 10, z: 35.791374}
+  m_Center: {x: -11.998283, y: 0, z: 32.769833}
 --- !u!1 &2004480474
 GameObject:
   m_ObjectHideFlags: 0
