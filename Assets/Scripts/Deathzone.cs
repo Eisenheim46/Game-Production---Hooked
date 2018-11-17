@@ -15,5 +15,10 @@ public class Deathzone : MonoBehaviour
 
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
+
+        else if (other.gameObject.tag == "Wood")
+        {
+            other.transform.position = other.GetComponent<BoxRespawn>().OriginPosition.position;
+        }
     }
 }

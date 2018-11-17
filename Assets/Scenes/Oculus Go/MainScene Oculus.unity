@@ -9477,6 +9477,35 @@ Transform:
   m_PrefabParentObject: {fileID: 4527633080301880, guid: 6b05e85eb66642f4a95d9d4d4ac6b11a,
     type: 2}
   m_PrefabInternal: {fileID: 406113839}
+--- !u!1 &417444732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 417444733}
+  m_Layer: 0
+  m_Name: Origin (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417444733
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417444732}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1145073705}
+  m_Father: {fileID: 1196960456}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &418216424
 Prefab:
   m_ObjectHideFlags: 0
@@ -24716,6 +24745,7 @@ GameObject:
   - component: {fileID: 1145073703}
   - component: {fileID: 1145073702}
   - component: {fileID: 1145073706}
+  - component: {fileID: 1145073707}
   m_Layer: 9
   m_Name: Movable Box
   m_TagString: Wood
@@ -24787,8 +24817,8 @@ Transform:
   m_LocalPosition: {x: 1, y: 0.24999964, z: 2.0570006}
   m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.50000024}
   m_Children: []
-  m_Father: {fileID: 1196960456}
-  m_RootOrder: 1
+  m_Father: {fileID: 417444733}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1145073706
 Rigidbody:
@@ -24805,6 +24835,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1145073707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1145073701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7979f9736fa8340b9642d7b29a0cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originPosition: {fileID: 417444733}
 --- !u!1001 &1152904806
 Prefab:
   m_ObjectHideFlags: 0
@@ -26202,8 +26244,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1984375997}
-  - {fileID: 1145073705}
+  - {fileID: 1382659548}
+  - {fileID: 417444733}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30837,6 +30879,35 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1382659547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1382659548}
+  m_Layer: 0
+  m_Name: Origin (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382659548
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382659547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1984375997}
+  m_Father: {fileID: 1196960456}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1391751595
 Prefab:
   m_ObjectHideFlags: 0
@@ -46633,6 +46704,7 @@ GameObject:
   - component: {fileID: 1984376001}
   - component: {fileID: 1984376000}
   - component: {fileID: 1984375999}
+  - component: {fileID: 1984375998}
   m_Layer: 9
   m_Name: Movable Box (1)
   m_TagString: Wood
@@ -46650,9 +46722,21 @@ Transform:
   m_LocalPosition: {x: 19.414, y: 3.117, z: 12.496}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 1196960456}
+  m_Father: {fileID: 1382659548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1984375998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984375996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7979f9736fa8340b9642d7b29a0cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originPosition: {fileID: 1382659548}
 --- !u!54 &1984375999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47261,6 +47345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2003979914}
   - component: {fileID: 2003979913}
+  - component: {fileID: 2003979916}
   - component: {fileID: 2003979915}
   m_Layer: 0
   m_Name: Deathzone
@@ -47307,6 +47392,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   checkpoint: {fileID: 1422419450}
+--- !u!65 &2003979916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003979912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 29.24012, y: 1, z: 16.152805}
+  m_Center: {x: -3.420803, y: 0, z: 22.990847}
 --- !u!1 &2004480474
 GameObject:
   m_ObjectHideFlags: 0
@@ -49407,8 +49504,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16, y: 1, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 35.119503, y: 1, z: 8}
+  m_Center: {x: 12.0379505, y: 0, z: 0}
 --- !u!4 &2100102174
 Transform:
   m_ObjectHideFlags: 0
@@ -49416,7 +49513,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2100102171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.15, y: -13.12, z: 11.71}
+  m_LocalPosition: {x: 32.15, y: -25.8, z: 11.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
