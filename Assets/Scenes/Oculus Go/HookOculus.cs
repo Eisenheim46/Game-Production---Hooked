@@ -271,7 +271,7 @@ public class HookOculus : MonoBehaviour {
 
                 retractedObject.parent = this.transform;
 
-                retractedObject.position += Vector3.forward * 0.7f;
+                retractedObject.localPosition += Vector3.forward * 0.7f;
 
                 retractedObject.rotation = this.transform.rotation;
 

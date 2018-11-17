@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1c7dfba66097545b1a1d7e7baf3ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainScene
+  sceneName: MainScene Oculus
   loadScene: 1
   quitGame: 0
 --- !u!1 &178881207
