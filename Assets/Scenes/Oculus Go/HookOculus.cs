@@ -268,14 +268,16 @@ public class HookOculus : MonoBehaviour {
 
                 retractedObject.parent = this.transform;
 
-                retractedObject.position = Vector3.zero;
-                retractedObject.position += Vector3.forward * 0.5f;
+                retractedObject.position = transform.localPosition + Vector3.forward * 0.7f;
+
                 retractedObject.rotation = this.transform.rotation;
 
                 retractedObject.GetComponent<Rigidbody>().isKinematic = true;
 
                 returning = true;
             }
+
+            return;
         }
         else
         {
