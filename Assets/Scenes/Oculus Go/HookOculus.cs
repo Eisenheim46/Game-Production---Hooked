@@ -10,6 +10,7 @@ public class HookOculus : MonoBehaviour {
     [SerializeField] private Transform playerRig;
     [SerializeField] private Transform playerCamera;
     [SerializeField] private OculusPlayerPhysics playerPhysics;
+    
 
     [Header("Manual Input")]
     [SerializeField] private float hookSpeed;
@@ -74,10 +75,17 @@ public class HookOculus : MonoBehaviour {
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad))
         {
+            Transform origin;
+
             if (retractedObject != null)
             {
+                origin = transform.parent;
+
                 retractedObject.parent = null;
                 retractedObject.GetComponent<Rigidbody>().isKinematic = false;
+
+                retractedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTrackedRemote) * 5f;
+                retractedObject.GetComponent<Rigidbody>().angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTrackedRemote) * 2f;
             }
         }
 
