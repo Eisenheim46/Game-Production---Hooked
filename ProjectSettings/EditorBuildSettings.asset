@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Oculus Go/New Level.unity
+    path: Assets/Scenes/Oculus Go/MainScene Oculus.unity
     guid: c6510ed1abb60d64f9c1a0462b7839f2
+  - enabled: 1
+    path: Assets/Scenes/Oculus Go/MenuScene Oculus.unity
+    guid: bd3426e99bff3e24b8ff786a6bf7707f
   m_configObjects: {}

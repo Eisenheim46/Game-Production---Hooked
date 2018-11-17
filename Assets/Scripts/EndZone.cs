@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndZone : MonoBehaviour {
 
-
+    [SerializeField] private string sceneToLoad;
 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
-            SceneManager.LoadScene("EndScene");
+            SceneManager.LoadScene(sceneToLoad);
 
     }
 
