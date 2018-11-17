@@ -7,7 +7,7 @@ public class InputAccepter : MonoBehaviour {
     private void Awake()
     {
         PlayerInput.onTriggerDown += TriggerDown;
-        PlayerInput.onTriggerDown += TriggerUp;
+        PlayerInput.onTriggerUp += TriggerUp;
     }
 
 
