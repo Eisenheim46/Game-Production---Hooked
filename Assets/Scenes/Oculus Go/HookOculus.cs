@@ -59,7 +59,7 @@ public class HookOculus : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             ShootHook();
 
@@ -115,13 +115,13 @@ public class HookOculus : MonoBehaviour {
 
             hookRb.velocity = transform.TransformDirection(0, hookSpeed, 0);
         }
-        else
-        {
-            hooked = false;
+        //else
+        //{
+        //    hooked = false;
 
 
-            returning = true;
-        }
+        //    returning = true;
+        //}
             
     }
 
@@ -131,19 +131,17 @@ public class HookOculus : MonoBehaviour {
 
         hookRb.isKinematic = true;
 
-        if (playerRb.isKinematic == true)
-        {
-            playerRb.isKinematic = false;
-        }
+        //if (playerRb.isKinematic == true)
+        //{
+        //    playerRb.isKinematic = false;
+        //}
 
-        if (playerRb.useGravity == true)
-        {
-            playerRb.useGravity = false;
-        }
+        //if (playerRb.useGravity == true)
+        //{
+        //    playerRb.useGravity = false;
+        //}
 
         ropeLine.enabled = true;
-
-
 
         if (playerPhysics.OnFloor)
         {
@@ -208,7 +206,7 @@ public class HookOculus : MonoBehaviour {
 
     private void ReturnHook()
     {
-        hookRb.velocity = new Vector3(0, 0, 0);
+ //       hookRb.velocity = new Vector3(0, 0, 0);
 
         hooked = false;
 
@@ -249,8 +247,7 @@ public class HookOculus : MonoBehaviour {
             hookRb.velocity = new Vector3 (0,0,0);
             hooked = true;
         }
-
-        if (collision.gameObject.tag == "Wood")
+        else if (collision.gameObject.tag == "Wood")
         {
             if (collision.transform.parent != this.transform)
             {
@@ -265,7 +262,6 @@ public class HookOculus : MonoBehaviour {
                 returning = true;
             }
         }
-
         else
         {
             returning = true;

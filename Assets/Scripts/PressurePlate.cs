@@ -18,7 +18,7 @@ public class PressurePlate : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Metal" || collision.gameObject.tag == "Wooden")
+        if (collision.gameObject.tag == "Metal" || collision.gameObject.tag == "Wood")
         {
             if (collision.rigidbody.mass == requiredMass)
             {

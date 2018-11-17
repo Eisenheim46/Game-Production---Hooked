@@ -22,17 +22,18 @@ public class OculusPlayerPhysics : MonoBehaviour {
 
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision collision)
     {
-        if (other.gameObject.tag == "Floor" && !TriggerPressed)
+
+        if (collision.gameObject.tag == "Floor" && !TriggerPressed)
         {
             OnFloor = true;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Ceiling" && !TriggerPressed)
+        if (collision.gameObject.tag == "Ceiling" && !TriggerPressed)
         {
             OnCeiling = true;
 
@@ -42,7 +43,7 @@ public class OculusPlayerPhysics : MonoBehaviour {
 
             playerRb.velocity = currentVelocity;
         }
-        else if (other.gameObject.tag == "Wall" && !TriggerPressed)
+        else if (collision.gameObject.tag == "Wall" && !TriggerPressed)
         {
             OnWall = true;
 
@@ -51,7 +52,7 @@ public class OculusPlayerPhysics : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
         playerRb.useGravity = true;
         playerRb.isKinematic = false;
