@@ -5569,7 +5569,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224828546}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.4963322, y: 1, z: 6.026352}
@@ -14625,12 +14625,12 @@ Prefab:
     - target: {fileID: 59466263673892204, guid: bfae1f5627bacc749bdcc9e35a3c2816,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.969244
+      value: 1.894001
       objectReference: {fileID: 0}
     - target: {fileID: 59466263673892204, guid: bfae1f5627bacc749bdcc9e35a3c2816,
         type: 2}
       propertyPath: m_ConnectedAnchor.z
-      value: -2.2480152
+      value: 0.088000625
       objectReference: {fileID: 0}
     - target: {fileID: 1821322603484244, guid: bfae1f5627bacc749bdcc9e35a3c2816, type: 2}
       propertyPath: m_TagString
@@ -14699,6 +14699,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4591461108105064, guid: bfae1f5627bacc749bdcc9e35a3c2816, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59466263673892204, guid: bfae1f5627bacc749bdcc9e35a3c2816,
+        type: 2}
+      propertyPath: m_UseLimits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
