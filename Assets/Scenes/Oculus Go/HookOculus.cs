@@ -68,6 +68,8 @@ public class HookOculus : MonoBehaviour {
         }
         else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger))
         {
+            hooked = false;
+
             returning = true;
 
             shooting = false;
@@ -266,6 +268,7 @@ public class HookOculus : MonoBehaviour {
 
                 retractedObject.parent = this.transform;
 
+                retractedObject.position += Vector3.up * 5;
                 retractedObject.rotation = this.transform.rotation;
 
                 retractedObject.GetComponent<Rigidbody>().isKinematic = true;
