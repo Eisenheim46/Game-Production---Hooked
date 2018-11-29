@@ -92,7 +92,14 @@ public class Hook : MonoBehaviour {
 
         if (currentHookDistance >= maxHookDistance)
         {
-            returning = true;
+            //if (hooked)
+            //{
+            //    playerRb.useGravity = false;
+            //    playerRb.isKinematic = true;
+            //}
+
+            //else
+                returning = true;
         }
 
         RenderLine();
