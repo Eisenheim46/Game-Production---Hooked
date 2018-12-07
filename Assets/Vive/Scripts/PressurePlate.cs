@@ -20,7 +20,7 @@ public class PressurePlate : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Metal" || collision.gameObject.tag == "Wood")
         {
-            if (collision.rigidbody.mass == requiredMass)
+            if (collision.rigidbody.mass >= requiredMass)
             {
                 animator.SetBool("IsPressed", true);
                 targetObject.GetComponent<IsEnabled>().isEnabled = true;
@@ -49,7 +49,10 @@ public class PressurePlate : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        animator.SetBool("IsPressed", false);
-        targetObject.GetComponent<IsEnabled>().isEnabled = false;
+        if (staysActivated == false && other.gameObject.tag == "Player")
+        {
+            animator.SetBool("IsPressed", false);
+            targetObject.GetComponent<IsEnabled>().isEnabled = false;
+        } 
     }
 }

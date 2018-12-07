@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Oculus Go/MainScene Oculus.unity
-    guid: 6fa5af35bb7b98645b185f99401bdbed
+    path: Assets/Vive/Scenes/MenuScene.unity
+    guid: 774e7f86a3b6d3c47983bc9243070d3a
   - enabled: 1
-    path: Assets/Scenes/Oculus Go/MenuScene Oculus.unity
-    guid: bd3426e99bff3e24b8ff786a6bf7707f
+    path: Assets/Vive/Scenes/MainScene.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Vive/Scenes/EndScene.unity
+    guid: 7c089b9b3964cde43acff3eb14b0a73d
   m_configObjects: {}
