@@ -25,6 +25,7 @@ public class WoodenDoorKeyhole : MonoBehaviour
             other.transform.position = transform.position;
             other.transform.rotation = transform.rotation;
             other.GetComponent<Pickable>().enabled = false;
+            isUnlocked = true;
             LockUnlock();
         }
     }
