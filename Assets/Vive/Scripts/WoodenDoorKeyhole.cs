@@ -22,8 +22,10 @@ public class WoodenDoorKeyhole : MonoBehaviour
         if (other.tag == "Key")
         {
             other.GetComponent<Rigidbody>().isKinematic = true;
-            other.transform.position = transform.position;
-            other.transform.rotation = transform.rotation;
+            //other.transform.parent = this.transform;
+            other.transform.SetParent(this.gameObject.transform, true);
+            other.transform.position = Vector3.zero;
+            other.transform.eulerAngles = Vector3.zero;
             other.GetComponent<Pickable>().enabled = false;
             isUnlocked = true;
             LockUnlock();
